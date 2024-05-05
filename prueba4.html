@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <link rel="icon" type="image/x-icon" href="favoicon.ico"> -->
+    <title>Reto: Disposición</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul, ol {
+            list-style: none;
+            
+        }
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        body {
+            /* min-width: 100%; */
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            /* flex-basis: 100px; */
+            
+        }
+        
+        header {
+            /* position: fixed; */
+            background: linear-gradient(to right, rgb(8, 52, 66), rgb(18, 157, 179));
+            border-bottom: solid 1px rgb(84, 70, 6);
+            box-shadow: 0 0 5px 1px rgb(164, 151, 13);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            padding-top: 60px;
+            text-align: center;
+            /* z-index: 1000; */
+            
+        }
+       
+        nav {
+            display: flex;
+            justify-content: center;
+            /* overflow: hidden; */
+        }
+
+        nav a {
+            color: rgb(255, 225, 0);
+            text-decoration: none;
+            font-size: 17px;
+            padding: 0 30px ;
+        }
+
+        a {
+            color: rgb(40, 199, 217);
+            text-decoration: none;
+        }
+
+        .product_container {
+            display: grid;
+            /* grid-template-columns: 300px 300px 300px 300px;
+            grid-template-rows: 400px 400px 400px 400px; */
+            grid-template-columns: 25% 25% 25% auto;
+            grid-template-rows: 50% 50% 50% auto;
+            text-align: center;
+            gap: 1rem;
+            
+            
+                        
+        }
+
+        #productos {
+            margin: 10px;
+            padding: 20px;   
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(255, 225, 0);
+            display: flex;
+            
+        }
+
+        /* div > div {
+            background: linear-gradient(to top, rgb(9, 40, 49), rgb(18, 157, 179));
+            border: 5px solid rgb(7, 36, 53);
+            border-radius: 15px;
+            padding: 10px;
+            width: 400px;
+            height: 400px; 
+                
+
+        } */
+
+        .producto1 img {
+            /* display: flex; */
+            width: 50px;
+            height: 50px;
+            /* width: 50%;
+            height: 70%; */
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+        .producto1 {
+            background: yellow;
+            background: linear-gradient(to top, rgb(9, 40, 49), rgb(18, 157, 179));
+            border: 5px solid rgb(7, 36, 53);
+            border-radius: 15px;
+            padding: 10px;
+            width: 400px;
+            height: 400px
+            /* max-width: auto; */
+            /* max-height: 80%;
+            overflow: hidden; */
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .producto2 img {
+            /* display: flex; */
+            width: 60%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto2 {    
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }   
+
+        .producto3 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto3 { 
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .producto4 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+        
+        .producto4 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .producto5 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto5 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }    
+
+        .producto6 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto3 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto6 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .producto7 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto7 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .producto8 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto8 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        .producto9 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto9 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        .producto10 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto10 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        .producto11 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto11 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        .producto12 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto12 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        .producto13 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto13 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+
+        .producto14 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto14 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+
+        .producto15 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto15 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+
+        .producto16 img {
+            /* display: flex; */
+            width: 50%;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+            overflow: hidden;
+            /* z-index: -1; */
+        }
+
+        .producto16 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 4;
+            grid-row-end: 5;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contactos">Contactos</a>
+            </nav>
+    </header>
+    <section id="productos">
+        <div class="product_container">
+            <div class="producto1">
+                <img src="./t-shirt-mockup-of-a-flat-lay-outfit-for-men-white_deer_shadow.png" alt="T-Shirt Chinese Shadow Print">
+                <h4>Producto 1</h4>
+                <p>Descripción</p>
+                Item 1
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto2">
+                <img src="./t-shirt-mockup-featuring-a-men-s-outfit-with-jeans-athletic heather_big nose man_shadows.png" alt="T-Shirt Chinese Shadow Print">
+                <h4>Producto 2</h4>
+                <p>Descripción</p>
+                Item 2
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto3">
+                <img src="./two-guys-wearing-different-t-shirts-mockup-while-lying-cropped-faced-against-a-white-bricks-wall-black and white_chinese shadows_pigeon_1.png" alt="">
+                <h4>Producto 3</h4>
+                <p>Descripción</p>
+                Item 3
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto4">
+                <img src="./t-shirt-mockup-featuring-a-ghost-model-reading-a-book-white_ man 1_shadow.png" alt="">
+                <h4>Producto 4</h4>
+                <p>Descripción</p>
+                Item 4
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto5">
+                <img src="./back-view-mockup-featuring-a-t-shirt-on-a-hanger-athletic heather_parrot_hands.png" alt="">
+                <h4>Producto 5</h4>
+                <p>Descripción</p>
+                Item 5
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto6">
+                <img src="./front-and-back-mockup-of-two-t-shirts-laying-flat-on-a-plain-surface-shirt_black and white_hands and shadow_dog.png" alt="">
+                <h4>Producto 6</h4>
+                <p>Descripción</p>
+                Item 6
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto7">
+                <img src="./ghosted-mockup-of-a-man-wearing-a-t-shirt-with-a-hat-and-sunglasses-white_hat man_chinese shadow.png" alt="">
+                <h4>Producto 7</h4>
+                <p>Descripción</p>
+                Item 7
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto8">
+                <img src="./pullover-hoodie-mockup-of-a-woman-looking-over-her-shoulder-dark heather_cat_astrology_1.jpg" alt="">
+                <h4>Producto 8</h4>
+                <p>Descripción</p>
+                Item 8
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto9">
+                <img src="./mockup-of-an-ai-created-woman-wearing-a-pullover-hoodie-at-a-concert-navy_dolphin_harmony.png" alt="">
+                <h4>Producto 9</h4>
+                <p>Descripción</p>
+                Item 9
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto10">
+                <img src="./mockup-of-a-woman-wearing-an-oversized-sweatshirt-and-pink-sunglasses-white_owl 1.png" alt="">
+                <h4>Producto 10</h4>
+                <p>Descripción</p>
+                Item 10
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto11">
+                <img src="./back-view-hoodie-mockup-of-a-man-in-an-e-boy-outfit-gold_freedom_horse 1.png" alt="">
+                <h4>Producto 11</h4>
+                <p>Descripción</p>
+                Item 11
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto12">
+                <img src="./back-view-hoodie-mockup-of-a-young-gamer-with-a-video-game-controller-m28513.png" alt="">
+                <h4>Producto 12</h4>
+                <p>Descripción</p>
+                Item 12
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto13">
+                <img src="./back-view-hoodie-mockup-of-an-e-girl-walking-down-the-stairs-light pink_dolphin_harmony.png" alt="">
+                <h4>Producto 13</h4>
+                <p>Descripción</p>
+                Item 13
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto14">
+                <img src="./gildan-pullover-hoodie-mockup-featuring-a-woman-posing-in-front-of-a-building-royal_Owl 3_night.png" alt="">
+                <h4>Producto 14</h4>
+                <p>Descripción</p>
+                Item 14
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto15">
+                <img src="./owl_puzzle_1.jpg" alt="">
+                <h4>Producto 15</h4>
+                <p>Descripción</p>
+                Item 15
+                <a href="#">Ver más</a>
+            </div>
+            <div class="producto16">
+                <img src="./journal_owl_5.png" alt="">
+                <h4>Producto 16</h4>
+                <p>Descripción</p>
+                Item 16
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

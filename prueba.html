@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <link rel="icon" type="image/x-icon" href="favoicon.ico"> -->
+    <title>Reto: Disposición</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            
+        }
+        body {
+            /* min-height: 100%; */
+            height: 100%;
+            display: grid;
+            grid-template-columns: 100px 100px 100px auto;
+            grid-template-rows: 70px auto 50px;
+            gap: 1rem;
+        }
+        nav, main, div, footer {
+            /* border-radius: 15px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        nav {
+            background: yellow;
+            box-shadow: 0 0 10px 2px rgb(7, 36, 53);
+            justify-content: space-around;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        main {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 100px auto;
+            grid-template-rows: 70px auto;
+            gap: 1rem;
+        }
+
+        .producto1, .producto2, .producto3, .producto4 {
+            /* border-radius: 15px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .producto1 {
+            border: 5px solid rgb(7, 36, 53);
+            border-radius: 15px;
+            justify-content: space-around;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            /* gap: 1rem; */
+        }
+
+        .producto2 {
+            background-color: rgb(255, 255, 255);
+            border: 5px solid rgb(7, 36, 53);
+            border-radius: 15px;
+            justify-content: space-around;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            /* gap: 1rem; */
+        }
+
+        footer {
+            background-color: rgb(7, 36, 53);
+            border-top: 2px solid yellow;
+            border-bottom: 2px solid yellow;
+            /* border-radius: 15px; */
+            justify-content: space-around;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: auto;
+            font-size: 14px;
+
+        }
+
+        footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contactos">Contactos</a>
+    </nav>
+    <section id="productos">
+    <main>
+        <div>
+            <div class="producto1">
+                <h4>Producto 1</h4>
+                <p>Descripción</p>
+                Item 1
+                <a href="">Ver más</a>
+            </div>
+            <div class="producto2">
+                <h4>Producto 2</h4>
+                <p>Descripción</p>
+                Item 2
+                <a href="">Ver más</a>
+            </div>
+            <div class="producto3">
+                <h4>Producto 3</h4>
+                <p>Descripción</p>
+                Item 3
+                <a href="">Ver más</a>
+            </div>
+            <div class="producto4">
+                <h4>Producto 4</h4>
+                <p>Descripción</p>
+                Item 4
+                <a href="">Ver más</a>
+            </div>
+        </div>
+    </main>
+    </section>
+    <footer>
+        &copy; 2023 It's Mine_IM
+    </footer>
+</body>
+</html>

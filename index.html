@@ -1,0 +1,669 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <link rel="icon" type="image/x-icon" href="./Logo It's Mine_IM (2000x2000_fondo blanco_borde).png">
+        <title>Reto: Disposición</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            ul, ol {
+                list-style: none;
+                
+            }
+            html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                
+            }
+
+            body {
+                /* min-width: 100%; */
+                /* height: 100%; */
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 18px;
+                /* flex-basis: 100px; */     
+            }
+
+            header {
+                position: fixed;
+                background: linear-gradient(to right, rgb(8, 52, 66), rgb(18, 157, 179)) no-repeat;
+                border-bottom: solid 1px rgb(84, 70, 6);
+                box-shadow: 0 0 5px 1px rgb(164, 151, 13);
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 150px;
+                text-align: center;
+                padding-top: 60px;
+                text-align: center;
+                z-index: 1000;             
+            }
+
+            header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 150px;
+                background-image: url("./Logo\ It\'s\ Mine_IM.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: bottom 32% left 21%;
+                opacity: 0.3; 
+                z-index: -1;
+                overflow: hidden;
+            }
+
+            .logo-container {
+                position: absolute;
+                margin-bottom: 30px;
+                padding-bottom: 60%;
+                padding-right: 20%; 
+                text-align: center;
+            }
+
+            /* .logo-container {
+                position: relative;
+                z-index: 0;
+            } */
+
+            .logo-container > a > #logo {
+                position: fixed;
+                float: left;
+                width: 165px;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: auto;
+                margin: 10px;
+                padding-bottom: 30px;   
+            }
+
+            nav {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                float: center;
+                overflow: hidden;
+                z-index: -1;
+            }
+
+            header, nav a {
+                text-align: center;
+                color: rgb(255, 225, 0);
+                text-decoration: none;
+                font-size: 17px;
+                padding: 20px 30px;    
+            }
+
+            nav a {
+                padding: 30px 30px 0;
+                margin-bottom: 30px;
+            }
+
+            header > h1 { 
+                top: 0;
+                margin-top: -10px;
+                padding: 0 30px 0;
+            }
+
+            header > p {
+                top: 0;
+                margin-top: 0;
+                padding-top: 0;
+                font-family: cursive;
+            }
+
+            p {
+                color: white;
+            }
+
+            a {
+                color: rgb(40, 199, 217);
+                text-decoration: none;
+            }
+
+            .product_container {
+                display: grid;
+                /* grid-template-columns: 300px 300px 300px 300px;
+                grid-template-rows: 400px 400px 400px 400px; */
+                /* grid-template-columns: 25% 25% 25% auto; */
+                /* grid-template-rows: 50% 50% 50% auto; */
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+                padding: 150px 20px 20px;
+                z-index: 1;                
+            }
+
+            #productos {
+                margin: 10px;
+                padding: 20px;   
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgb(255, 225, 0);
+                display: flex;
+                z-index: 0;
+            }
+
+            div > div {
+                background: linear-gradient(to top, rgb(9, 40, 49), rgb(18, 157, 179));
+                border: 5px groove rgb(7, 36, 53);
+                border-radius: 15px;
+                padding: 10px;   
+            }
+
+            .producto1 {
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                padding: 30px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                gap: 1rem;
+            }
+
+            .producto1 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+            }
+
+            .producto2 {    
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            
+            .producto2 img {
+                width: 100%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+                
+            }
+
+            .producto3 { 
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .producto3 img {
+                width: 100%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+                
+            }
+
+            .producto4 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .producto4 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;       
+            }
+
+            .producto5 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }   
+            
+            .producto5 img {
+                width: 60%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+            }
+
+            .producto6 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            .producto6 img {
+                width: 100%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;    
+            }
+
+            .producto7 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            .producto7 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+            }
+
+            .producto8 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+            .producto8 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden; 
+            }
+
+            .producto9 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .producto9 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;    
+        }
+
+            .producto10 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .producto10 img {
+                width: 100%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;  
+        }
+
+            .producto11 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .producto11 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+        }
+
+            .producto12 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
+            .producto12 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+            }
+
+            .producto13 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+
+            .producto13 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+        }
+
+            .producto14 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+
+            .producto14 img {
+                width: 50%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden; 
+            }
+
+            .producto15 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+
+            .producto15 img {
+                width: 90%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;   
+        }
+
+            .producto16 {
+                padding: 30px;
+                width: 400px;
+                height: 400px;
+                margin: 10px;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 4;
+                grid-row-end: 5;
+            }
+            
+            .producto16 img {
+                width: 70%;
+                height: auto;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                box-shadow: 5px 3px 15px 5px rgb(4, 17, 24);
+                overflow: hidden;
+        }
+
+        footer {
+            background-color: rgb(7, 36, 53);
+            border-top: 2px solid yellow;
+            border-bottom: 2px solid yellow;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: auto;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        footer {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: yellow;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #water_mark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -2;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+                <h1 title="Online Shop">It's Mine_IM</h1>
+                <p>Online Shop</p>
+            <div class="logo-container">
+                <a href="https://itsmineim.etsy.com" target="_blank"><img id="logo" src="./Logo It's Mine_IM (2000x2000_fondo blanco_borde).png" alt="Logo It's Mine_IM"></a>
+            </div>
+            <nav>
+                <a href="#inicio">Home</a>
+                <a href="#productos">Products</a>
+                <a href="#servicios">Services</a>
+                <a href="#contactos">Contact</a>
+            </nav>
+        </header>
+        <section id="productos">
+            <div class="product_container">
+                <img id="water_mark" src="./Logo It's Mine_IM (2000x2000_fondo blanco).png" alt="Logo It's Mine_IM">
+                <div class="producto1">
+                    <img src="./t-shirt-mockup-of-a-flat-lay-outfit-for-men-white_deer_shadow.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, Deer</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1679636546/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto2">
+                    <img src="./t-shirt-mockup-featuring-a-men-s-outfit-with-jeans-athletic heather_big nose man_shadows.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, Big Nose Man</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1679830028/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto3">
+                    <img src="./two-guys-wearing-different-t-shirts-mockup-while-lying-cropped-faced-against-a-white-bricks-wall-black and white_chinese shadows_pigeon_1.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, Pigeon</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1693575259/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto4">
+                    <img src="./t-shirt-mockup-featuring-a-ghost-model-reading-a-book-white_ man 1_shadow.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, African Man</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1679746056/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto5">
+                    <img src="./back-view-mockup-featuring-a-t-shirt-on-a-hanger-athletic heather_parrot_hands.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, Parrot</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1679785396/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto6">
+                    <img src="./front-and-back-mockup-of-two-t-shirts-laying-flat-on-a-plain-surface-shirt_black and white_hands and shadow_dog.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, Dog</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1679304214/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto7">
+                    <img src="./ghosted-mockup-of-a-man-wearing-a-t-shirt-with-a-hat-and-sunglasses-white_hat man_chinese shadow.png" alt="T-Shirt Chinese Shadow Print">
+                    <h4>T-Shirt</h4>
+                    <p>Chinese Shadows Print, Hat Man</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1693877413/camiseta-camiseta-basica-para-hombre-as" target="_blank">Ver más</a>
+                </div>
+                <div class="producto8">
+                    <img src="./pullover-hoodie-mockup-of-a-woman-looking-over-her-shoulder-dark heather_cat_astrology_1.jpg" alt="Pullover_Hoodie Astrology Cat Print">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Astrology Cat Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1692963937/sudadera-con-capucha-estilo-urbano" target="_blank">Ver más</a>
+                </div>
+                <div class="producto9">
+                    <img src="./mockup-of-an-ai-created-woman-wearing-a-pullover-hoodie-at-a-concert-navy_dolphin_harmony.png" alt="Pullover_Hoodie Dolphin Print">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Dolphin Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1692232681/sudadera-urban-style-gildan-18500" target="_blank">Ver más</a>
+                </div>
+                <div class="producto10">
+                    <img src="./sublimated-pullover-hoodie-mockup-featuring-a-woman-at-home-31247_Pink_OWL.png">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Owl Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1676131342/sudadera-urban-style-gildan-18500" target="_blank">Ver más</a>
+                </div>
+                <div class="producto11">
+                    <img src="./back-view-hoodie-mockup-of-a-man-in-an-e-boy-outfit-gold_freedom_horse 1.png" alt="Pullover_Hoodie Horse Print">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Horse Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1676810604/sudadera-urban-style-gildan-18500" target="_blank">Ver más</a>
+                </div>
+                <div class="producto12">
+                    <img src="./back-view-hoodie-mockup-of-a-young-gamer-with-a-video-game-controller-m28513.png" alt="Pullover_Hoodie Hawk Print">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Hawk Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1676241244/sudadera-con-capucha-estilo-urbano" target="_blank">Ver más</a>
+                </div>
+                <div class="producto13">
+                    <img src="./back-view-hoodie-mockup-of-an-e-girl-walking-down-the-stairs-light pink_dolphin_harmony.png" alt="Pullover_Hoodie Dolphin Print">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Dolphin Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1692232681/sudadera-urban-style-gildan-18500" target="_blank">Ver más</a>
+                </div>
+                <div class="producto14">
+                    <img src="./gildan-pullover-hoodie-mockup-featuring-a-woman-posing-in-front-of-a-building-royal_Owl 3_night.png" alt="Pullover_Hoodie Owl Print">
+                    <h4>Hoodie</h4>
+                    <p>Urban Style - Owl Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1690887859/sudadera-con-capucha-estilo-urbano" target="_blank">Ver más</a>
+                </div>
+                <div class="producto15">
+                    <img src="./owl_puzzle_1.jpg" alt="Puzzle Owl Print">
+                    <h4>Puzzle</h4>
+                    <p>Owl Print</p>
+
+                    <a href="https://itsmineim.etsy.com/es/listing/1691329915/dark-owl-puzzle-110-piezas" target="_blank">Ver más</a>
+                </div>
+                <div class="producto16">
+                    <img src="./journal_owl_5.png" alt="Journal Owl Print">
+                    <h4>Journal</h4>
+                    <p>Owl Print</p>
+                    <a href="https://itsmineim.etsy.com/es/listing/1676671670/diario-paginas-en-blanco-cuaderno-de" target="_blank">Ver más</a>
+                </div>
+            </div>
+        </section>
+        <footer>&copy;2024 It's Mine_IM</footer>
+    </body>
+    </html>
